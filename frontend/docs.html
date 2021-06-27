@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Free DB</title>
+    <meta name="description" content="Service for creating web accessible SQLite3 databases">
+    <meta name="author" content="ted.summer2@gmail.com">
+    
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="steps">
+            <div>
+                This service provides the ability to create and query sqlite3 databases through a web API.
+                <h3><code>/db</code></h3>
+                <p>
+                    Create a database
+                </p>
+                <ul>
+                    <li>method: POST</li>
+                    <li>response: JSON object with a <code>token</code></li>
+                </ul>
+                <h3><code>/q</code></h3>
+                <p>
+                    Query a database
+                </p>
+                <ul>
+                    <li>method: POST</li>
+                    <li>
+                        body: JSON body containing the following
+                        <ul>
+                            <li><code>token</code>: string, your token</li>
+                            <li><code>query</code>: string, query to execute</li>
+                            <li><code>params</code>: (optional) array, if query contains parameter placeholders (ie <code>?</code>) provide this array of parameters in order of placeholders.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        response: JSON array, list of query results
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            Made by <a href="https://macintoshpie.github.io">Ted</a>
+        </div>
+    </div>
+</body>
+</html>

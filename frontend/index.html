@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Free DB</title>
+    <meta name="description" content="Service for creating web accessible SQLite3 databases">
+    <meta name="author" content="ted.summer2@gmail.com">
+    
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="steps">
+            <div class="step active" id="step-create">
+                <button id="create-button">Create DB</button>
+                <p>View <a href="docs.html">API docs</a></p>
+            </div>
+            
+            <div class="step" id="step-creating">
+                Creating database...
+            </div>
+            
+            <div class="step" id="step-created">
+                <p>Success</p>
+                <code id="db-token"></code>
+                <p>
+                    Record the token above (this is the only time it will ever be shown).
+                    Refer to the <a href="docs.html" target="_blank">API docs</a> for usage.
+                </p>
+                
+                <textarea id="query-input" rows="20">CREATE TABLE 'users'(
+    'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+    'name' VARCHAR(32)
+);</textarea>
+                    <button id="query-button">Submit query</button>
+                    <pre id="query-response"></pre>
+                </div>
+                
+                <div class="step" id="step-error">
+                    <p id="error-container"></p>
+                </div>
+            </div>
+
+            <div>
+                Made by <a href="https://macintoshpie.github.io">Ted</a>
+            </div>
+        </div>
+        
+        <script src="index.js"></script>
+    </body>
+    </html>
