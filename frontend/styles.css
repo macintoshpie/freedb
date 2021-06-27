@@ -47,10 +47,10 @@ body {
 }
 
 button {
-    border: 1px solid;
+    border: 3px solid;
     background: var(--accent);
     color: var(--accent-text);
-    font-size: medium;
+    font-size: 30px;
     box-shadow: none;
     border-radius: 5px;
 }
