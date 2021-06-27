@@ -1,4 +1,4 @@
-const apiBaseUrl = `http://api.freedb.me` 
+const apiBaseUrl = `https://api.freedb.me` 
 
 let dbToken = null
 const errorContainer = document.getElementById('error-container')
