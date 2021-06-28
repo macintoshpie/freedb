@@ -18,6 +18,7 @@
         <div class="steps">
             <div>
                 This service provides the ability to create and query sqlite3 databases through a web API.
+                <h2><code>https://api.freedb.me</code></h2>
                 <h3><code>/db</code></h3>
                 <p>
                     Create a database
@@ -26,6 +27,12 @@
                     <li>method: POST</li>
                     <li>response: JSON object with a <code>token</code></li>
                 </ul>
+                <h4>example</h4>
+                <p>
+                    <pre>$ curl -x POST https://api.freedb.me/db
+# response: {"token": "abcdefg"}</pre>
+                </p>
+
                 <h3><code>/q</code></h3>
                 <p>
                     Query a database
@@ -44,6 +51,20 @@
                         response: JSON array, list of query results
                     </li>
                 </ul>
+
+                <h4>examples</h4>
+                <p>
+                    Basic query
+                    <pre>$ curl -X POST -d '{"token": "your-token", "query": "INSERT INTO users (name) VALUES (\"ted\")"}' https://api.freedb.me/q
+
+# response: []</pre>
+                </p>
+                <p>
+                    Parameterized query
+                    <pre>$ curl -X POST -d '{"token": "your-token", "query": "SELECT * FROM users WHERE id = ?", "params": [1]}' https://api.freedb.me/q
+
+# response: [{"id":1,"name":"ted"}]</pre>
+                </p>
             </div>
         </div>
         <div>

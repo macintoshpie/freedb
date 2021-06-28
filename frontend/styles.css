@@ -59,4 +59,5 @@ code, pre {
     background-color: #d7cdeb;
     border-radius: 2px;
     color: #313131;
+    white-space: pre-wrap;
 }
